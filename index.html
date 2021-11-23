@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list - Login</title>
+    <script async src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script defer src="scripts/checkLogin.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bgImg">
+    <div class="container mt-2 text-primary">
+        <div style="height:150px;width:100%;" class="d-block"></div>
+        <div class="row row-cols-1 mx-auto"> 
+            <div class="col-md-3 col-lg-4"></div>
+            <div class="col col-md-6 col-lg-4 shdRound ">
+                <div class="d-flex justify-content-center mt-2">
+                    <img src="images/checklist.png" alt="icon" class="d-inline" />&emsp;
+                    <h3 class="text-light">To Do App</h3>
+                </div>
+                <hr>
+                <form class="p-4" onsubmit="checkLogin(event);">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="inputUN" placeholder="User Name" aria-describedby="User name">
+                        <label for="inputUN" class="form-label">User Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        <label for="inputPassword" class="form-label">Password</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Login</button><br>
+                        <label id="lblMsg" class="form-label text-danger fst-italic"></label>
+                    </div>
+              </form>
+            </div>
+        </div>
+        <div style="height:150px;width:100%;" class="d-block"></div>
+    </div>
+</body>
+</html>

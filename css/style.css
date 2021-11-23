@@ -1,0 +1,53 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.mainHeading {
+  color: #0d6efd;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+.subHeading {
+  color: darkcyan;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+.shdRound {
+  border-radius: 10px;
+  border: solid grey 2px;
+  background-color: rgb(30, 17, 39, 0.9);
+}
+
+.bgImg {
+  background-color: #004a7f;
+  background-image: url("../images/bkChkList.png");
+  background-repeat: repeat;
+}
+
+.bgList {
+  background: rgb(8, 91, 120);
+  
+}
+
+.dataDiv {
+  height: 80vh;
+  overflow: auto;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-image: none !important;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: #639963;
+}
+
+.carousel-caption {
+  background-color: rgb(37, 97, 37, 0.7);
+}
