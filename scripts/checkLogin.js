@@ -53,7 +53,7 @@ function Authenticate(validateFn) {
             validateFn(strResponse.userID, strResponse.userName, strResponse.psw);
         }
     }
-    xhr.open('GET', '../scripts/users.json', true);
+    xhr.open('GET', 'https://kantraman.github.io/ToDoListCS1/scripts/users.json', true);
     xhr.send();
 }
       
