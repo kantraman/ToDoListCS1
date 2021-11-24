@@ -24,13 +24,15 @@
 }
 
 .bgImg {
-  background-color: #004a7f;
+  background-color:#1F425C;
   background-image: url("../images/bkChkList.png");
   background-repeat: repeat;
 }
 
 .bgList {
-  background-color: #ffe97f;
+  background-color: #1F425C;
+  background-image:url('../images/1063.png');
+  background-repeat:repeat;
 }
 
 .dataDiv {
@@ -38,15 +40,8 @@
   overflow: auto;
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  background-image: none !important;
-}
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  background-color: #639963;
-}
-
-.carousel-caption {
-  background-color: rgb(37, 97, 37, 0.7);
+.navBg{
+  background-color:#3674A1;
+  border-top: #1F425C groove 2px;
+  border-bottom: #1F425C groove 2px;
 }
