@@ -38,6 +38,8 @@
 .dataDiv {
   height: 80vh;
   overflow: auto;
+  background-color:#f9f9cc;
+  border: 1px solid #c9c999;
 }
 
 .navBg{
@@ -45,3 +47,4 @@
   border-top: #1F425C groove 2px;
   border-bottom: #1F425C groove 2px;
 }
+

@@ -5,24 +5,29 @@ document.addEventListener("DOMContentLoaded", () => {
         getToDoList();
 })
 
+var numChk = 0;
+
 function getToDoList() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var arrResponse = JSON.parse(this.responseText);
             var strOutput = "";
-            
-            strOutput += "<table class='table-sm table-hover'>";
-            strOutput += "<tbody style='background-color:#f9f9cc;border: 1px solid #c9c999;'>"
+            let i = 1;
+
+            strOutput += "<table class='table-sm'>";
             arrResponse.forEach(item => {
-                strOutput += `<tr style='cursor: pointer;'><td class='text-end'> ${item.userId} </td>`;
-                strOutput += `<td> ${item.id} </td>`;
-                strOutput += `<td> ${item.title} </td>`;
-                strOutput += `<td> ${item.completed} </td></tr>`;
+                strOutput += "<tr><td>";
+                if (item.completed === false)
+                    strOutput += `<input id ='chk${i}' type='checkbox' class='form-check-input' onchange='chkBoxChecked(this)'/></td><td>`;
+                else
+                    strOutput += `<input id ='chk${i}' type='checkbox' class='form-check-input' checked disabled/></td><td style='color:red;text-decoration: line-through;'>`;
+                strOutput += `<label for = 'chk${i}'>${item.title}</label></td></tr>`
+                i += 1;
             });
-            strOutput += "</tbody></table>"
+            strOutput += "</table>"
             document.querySelector("#list").innerHTML = strOutput;
-           
+            numChk = 0;
         }
     }
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos', true);
@@ -32,4 +37,24 @@ function getToDoList() {
 function logOut() {
     localStorage.clear();
     window.location = "index.html";
+}
+
+function chkBoxChecked(obj) {
+    let label = obj.parentNode.nextSibling;
+    if (obj.checked) {
+        numChk += 1;
+        label.style.textDecoration = "line-through";
+        label.style.color = "red";
+        if (numChk === 5) {
+            alert(" “Congrats!!! 5 Tasks have been Successfully Completed.");
+            numChk = 0;
+        }
+    } else {
+        if (numChk > 0)
+            numChk -= 1;
+        else
+            numChk = 4;
+        label.style.textDecoration = "";
+        label.style.color = "black";
+    }
 }
