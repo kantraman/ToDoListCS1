@@ -15,7 +15,7 @@ function getToDoList() {
             var strOutput = "";
             let i = 1;
 
-            strOutput += "<table id = 'toDoList' class = 'table table-sm'>";
+            strOutput += "<table id = 'toDoList' class = 'table table-sm table-hover'>";
             arrResponse.forEach(item => {
                 strOutput += "<tr><td>"; 
                 if (item.completed === false) {
@@ -36,6 +36,27 @@ function getToDoList() {
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos', true);
     xhr.send();
 }
+
+function addItem() {
+    let newItem = document.querySelector("#newItem");
+    let listTable = document.getElementById("toDoList");
+
+    if (newItem.value.trim() !== "") {
+        let row = listTable.insertRow(0);
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+
+        cell1.innerHTML = `<input id ='chk${listTable.rows.length + 1}' type='checkbox' class='form-check-input' onchange='chkBoxChecked(this)'/>`;
+        cell2.innerHTML = `<label for = 'chk${listTable.rows.length + 1}'>${newItem.value.trim()}</label>`;
+        cell3.innerHTML = "<img src='./images/delIcon.png' width='20px' height='20px' alt='Del' />";
+        cell3.setAttribute("onclick", "delItem(this)");
+        newItem.value = "";
+        document.querySelector("#list").scrollTop = 0;
+        window.alert("New item added at the top of list.");
+    }
+}
+
 
 function delItem(obj) {
     let blnContinue = window.confirm("Are you sure you want to delete the item?")

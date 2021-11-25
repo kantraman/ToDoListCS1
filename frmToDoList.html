@@ -31,8 +31,12 @@
         </div>
     </nav>  
     <div class="container">
-        <div style="height:80px;width:100%;" class="d-block"></div>
+        <div style="height:70px;width:100%;" class="d-block"></div>
         <div id="list" class="mx-auto col col-md-10 col-lg-7 dataDiv"></div>
+        <div class="mx-auto col col-md-10 col-lg-7 d-flex justify-content-center p-2" style="background-color:#f9f9cc;" >
+          <input type="text" id="newItem" class="form-control d-inline" style="width:70%;" placeholder="Enter new item.">
+          <button class="btn btn-primary d-inline" onclick="addItem()">+</button>
+        </div>
         <div style="height:100px;width:100%;" class="d-block"></div>
     </div>
 </body>

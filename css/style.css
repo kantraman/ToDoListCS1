@@ -20,19 +20,22 @@
 .shdRound {
   border-radius: 10px;
   border: solid grey 2px;
-  background-color: rgb(30, 17, 39, 0.9);
+  background-color: rgb(5, 10, 60, 0.9);
 }
 
 .bgImg {
   background-color:#1F425C;
   background-image: url("../images/bkChkList.png");
-  background-repeat: repeat;
+  background-position:right bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .bgList {
   background-color: #1F425C;
   background-image:url('../images/1063.png');
   background-repeat:repeat;
+  background-attachment: fixed;
 }
 
 .dataDiv {
