@@ -25,7 +25,7 @@ function getToDoList() {
                     strOutput += `<input id ='chk${i}' type='checkbox' class='form-check-input' checked disabled/></td><td>`;
                     strOutput += `<label for = 'chk${i}' class='text-decoration-line-through text-danger' >${item.title}</label></td>`
                 }
-                strOutput += "<td onclick='delItem(this)'><img src='../images/delIcon.png' width='20px' height='20px' alt='Del' /></td>"
+                strOutput += "<td onclick='delItem(this)'><img src='./images/delIcon.png' width='20px' height='20px' alt='Del' /></td>"
                 i += 1;
             });
             strOutput += "</table>"
