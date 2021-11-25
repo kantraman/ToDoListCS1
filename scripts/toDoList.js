@@ -14,6 +14,7 @@ function getToDoList() {
             var arrResponse = JSON.parse(this.responseText);
             var strOutput = "";
             let i = 1;
+            let divCon = document.querySelector("#list");
 
             strOutput += "<table id = 'toDoList' class = 'table table-sm table-hover'>";
             arrResponse.forEach(item => {
@@ -29,7 +30,8 @@ function getToDoList() {
                 i += 1;
             });
             strOutput += "</table>"
-            document.querySelector("#list").innerHTML = strOutput;
+            divCon.innerHTML = strOutput;
+            divCon.scrollTop = 0;
             numChk = 0;
         }
     }
