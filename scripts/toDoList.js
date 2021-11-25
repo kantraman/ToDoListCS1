@@ -15,16 +15,17 @@ function getToDoList() {
             var strOutput = "";
             let i = 1;
 
-            strOutput += "<table class='table-sm'>";
+            strOutput += "<table id = 'toDoList' class = 'table table-sm'>";
             arrResponse.forEach(item => {
-                strOutput += "<tr><td>";
+                strOutput += "<tr><td>"; 
                 if (item.completed === false) {
                     strOutput += `<input id ='chk${i}' type='checkbox' class='form-check-input' onchange='chkBoxChecked(this)'/></td><td>`;
-                    strOutput += `<label for = 'chk${i}'>${item.title}</label></td></tr>`
+                    strOutput += `<label for = 'chk${i}'>${item.title}</label></td>`
                 } else {
                     strOutput += `<input id ='chk${i}' type='checkbox' class='form-check-input' checked disabled/></td><td>`;
-                    strOutput += `<label for = 'chk${i}' class='text-decoration-line-through text-danger' >${item.title}</label></td></tr>`
+                    strOutput += `<label for = 'chk${i}' class='text-decoration-line-through text-danger' >${item.title}</label></td>`
                 }
+                strOutput += "<td onclick='delItem(this)'><img src='../images/delIcon.png' width='20px' height='20px' alt='Del' /></td>"
                 i += 1;
             });
             strOutput += "</table>"
@@ -34,6 +35,14 @@ function getToDoList() {
     }
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos', true);
     xhr.send();
+}
+
+function delItem(obj) {
+    let blnContinue = window.confirm("Are you sure you want to delete the item?")
+    if (blnContinue) {
+        let i = obj.parentNode.rowIndex;
+        document.getElementById("toDoList").deleteRow(i);
+    }
 }
 
 function logOut() {
