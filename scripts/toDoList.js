@@ -42,14 +42,14 @@ function getToDoList() {
 function addItem() {
     let newItem = document.querySelector("#newItem");
     let listTable = document.getElementById("toDoList");
+    let itemToAdd = newItem.value.replace(/<[^>]*>/g, ' ').trim();
 
-    if (newItem.value.trim() !== "") {
+    if (itemToAdd !== "") {
         let row = listTable.insertRow(0);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
-        let itemToAdd = newItem.value.replace(/<[^>]*>/g, ' ').trim();
-
+        
         cell1.innerHTML = `<input id ='chk${listTable.rows.length + 1}' type='checkbox' class='form-check-input' onchange='chkBoxChecked(this)'/>`;
         cell2.innerHTML = `<label for = 'chk${listTable.rows.length + 1}'>${itemToAdd}</label>`;
         cell3.innerHTML = "<img src='./images/delIcon.png' width='20px' height='20px' alt='Del' />";
@@ -57,6 +57,8 @@ function addItem() {
         newItem.value = "";
         document.querySelector("#list").scrollTop = 0;
         window.alert("New item added at the top of list.");
+    } else if(newItem.value.trim().length !== 0) {
+        window.alert("< or > is not permitted in new item.");
     }
 }
 
