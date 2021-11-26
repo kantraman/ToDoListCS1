@@ -42,7 +42,7 @@ function getToDoList() {
 function addItem() {
     let newItem = document.querySelector("#newItem");
     let listTable = document.getElementById("toDoList");
-    let itemToAdd = newItem.value.replace(/[<>]/ig, ' ').trim();
+    let itemToAdd = newItem.value.replaceAll(">", "&gt;").replaceAll("<","&lt;").replaceAll("&","&amp;").trim();
 
     if (itemToAdd !== "") {
         let row = listTable.insertRow(0);
@@ -57,9 +57,7 @@ function addItem() {
         newItem.value = "";
         document.querySelector("#list").scrollTop = 0;
         window.alert("New item added at the top of list.");
-    } else if(newItem.value.trim().length !== 0) {
-        window.alert("< or > is not permitted in new item.");
-    }
+    } 
 }
 
 
