@@ -48,9 +48,10 @@ function addItem() {
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
+        let itemToAdd = newItem.value.replace(/<[^>]*>/g, ' ').trim();
 
         cell1.innerHTML = `<input id ='chk${listTable.rows.length + 1}' type='checkbox' class='form-check-input' onchange='chkBoxChecked(this)'/>`;
-        cell2.innerHTML = `<label for = 'chk${listTable.rows.length + 1}'>${newItem.value.trim()}</label>`;
+        cell2.innerHTML = `<label for = 'chk${listTable.rows.length + 1}'>${itemToAdd}</label>`;
         cell3.innerHTML = "<img src='./images/delIcon.png' width='20px' height='20px' alt='Del' />";
         cell3.setAttribute("onclick", "delItem(this)");
         newItem.value = "";
