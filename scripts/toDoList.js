@@ -42,7 +42,7 @@ function getToDoList() {
 function addItem() {
     let newItem = document.querySelector("#newItem");
     let listTable = document.getElementById("toDoList");
-    let itemToAdd = newItem.value.replaceAll(">", "&gt;").replaceAll("<","&lt;").replaceAll("&","&amp;").trim();
+    let itemToAdd = newItem.value.replaceAll("&","&amp;").replaceAll(">", "&gt;").replaceAll("<","&lt;").trim();
 
     if (itemToAdd !== "") {
         let row = listTable.insertRow(0);
